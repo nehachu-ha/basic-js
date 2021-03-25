@@ -13,7 +13,6 @@ module.exports = function dateSample(sampleActivity) {
     return false;
   }
 
-  let age = Math.ceil(MODERN_ACTIVITY / parseInt(sampleActivity)) / (0.693 / HALF_LIFE_PERIOD);
-  return age;
+   return Math.ceil(MODERN_ACTIVITY / parseInt(sampleActivity)) / (0.693 / HALF_LIFE_PERIOD);
 };
 
