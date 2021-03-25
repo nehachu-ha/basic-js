@@ -5,7 +5,7 @@ const HALF_LIFE_PERIOD= 5730;
 
 module.exports = function dateSample(sampleActivity) {
   throw new CustomError('Not implemented');
-  if (typeof (sampleActivity) != 'string') {
+  if (typeof (sampleActivity) !== 'string') {
     return false;
   }
 
