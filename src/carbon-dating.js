@@ -4,15 +4,18 @@ const MODERN_ACTIVITY= 15;
 const HALF_LIFE_PERIOD= 5730;
 
 module.exports = function dateSample(sampleActivity) {
-  throw new CustomError('Not implemented');
-  // if (typeof (sampleActivity) !== 'string') {
-  //   return false;
-  // }
-  //
-  // if (isNaN(parseInt(sampleActivity)) ||  parseInt(sampleActivity) > MODERN_ACTIVITY || parseInt(sampleActivity) <= 0) {
-  //   return false;
-  // }
-  //
-  //  return Math.ceil(MODERN_ACTIVITY / parseInt(sampleActivity)) / (0.693 / HALF_LIFE_PERIOD);
+  // throw new CustomError('Not implemented');
+  let k = 0.693 / HALF_LIFE_PERIOD;
+  if (
+    typeof sampleActivity === "string" &&
+    Number(sampleActivity) &&
+    Number(sampleActivity) < MODERN_ACTIVITY &&
+    Number(sampleActivity) > 0
+  ) {
+    return Math.ceil(Math.log(MODERN_ACTIVITY / Number(sampleActivity)) / k);
+  } else {
+    return false;
+  }
+
 };
 
