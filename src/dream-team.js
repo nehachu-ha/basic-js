@@ -5,13 +5,13 @@ module.exports = function createDreamTeam(members) {
   let res = [];
   if (Array.isArray(members)) {
     members.forEach((elem) => {
-      if (typeof elem === "string") {
+      if (typeof elem === 'string') {
         res.push(elem.toUpperCase().trim().charAt());
       } else {
         return false;
       }
     });
-    return res.sort().join("");
+    return res.sort().join('');
   } else {
     return false;
   }
